@@ -31,11 +31,11 @@ namespace IT123P_Machine_Problem
             password = FindViewById<EditText>(Resource.Id.editText2);
             send = FindViewById<Button>(Resource.Id.button1);
             goback = FindViewById<Button>(Resource.Id.button2);
-
+            send.Click += newAccount;
             goback.Click += GoBack;
         }
 
-        public void AddMessage(object sender, EventArgs e)
+        public void newAccount(object sender, EventArgs e)
         {
             string newpword = username.Text;
             string newuser = password.Text;
