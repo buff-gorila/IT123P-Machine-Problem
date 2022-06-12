@@ -18,7 +18,7 @@ namespace IT123P_Machine_Problem
     public class RetrieveMessage : Activity
     {
         // still missing user since its testing (adjust for login)
-        string user;
+        
         TextView txtMsg, txtID;
         Button btn1, btn2, btn3;
         HttpWebResponse response;
@@ -43,7 +43,7 @@ namespace IT123P_Machine_Problem
             btn2.Click += reportMessage; // dont do stuff on this since not linked to login
             btn3.Click += returnToLanding;
 
-            buildMessage();
+            
         }
 
         public void getMessage(object sender, EventArgs e)
@@ -55,7 +55,7 @@ namespace IT123P_Machine_Problem
         {
             // change ip to your pc's ipv4 address when testing on your end (type ipconfig in command prompt to find it)
             // also change directory to wherever you've stored the php files
-            request = (HttpWebRequest)WebRequest.Create("http://192.168.0.17/SupportApp/REST/display_message.php");
+            request = (HttpWebRequest)WebRequest.Create("http://192.168.1.2/SupportApp/REST/display_message.php");
             response = (HttpWebResponse)request.GetResponse();
             StreamReader reader = new StreamReader(response.GetResponseStream());
             var result = reader.ReadToEnd();
@@ -83,12 +83,21 @@ namespace IT123P_Machine_Problem
 
         public void reportMessage(object sender, EventArgs e)
         {
-        // since mvps i wont implement it for now
+            string user = Intent.GetStringExtra("Name");
+            string reportedID = txtID.Text;
+            string reporter = user;
+            string webRequest = "http://192.168.1.2/SupportApp/REST/report_message.php?messageID=" + reportedID + "&username=" + reporter;
+            request = (HttpWebRequest)WebRequest.Create(webRequest);
+            response = (HttpWebResponse)request.GetResponse();
+            StreamReader reader = new StreamReader(response.GetResponseStream());
+            string res = reader.ReadToEnd();
+            Toast.MakeText(this, res, ToastLength.Long).Show();
         }
 
         //Simple return to landing page/previous page
         public void returnToLanding(object sender, EventArgs e)
         {
+
             Finish();
         }
     }

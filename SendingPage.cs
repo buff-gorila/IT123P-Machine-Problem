@@ -50,7 +50,7 @@ namespace IT123P_Machine_Problem
         {
             message = editMessage.Text;
             username = User.Text;
-            string toSend = "http://192.168.0.17/SupportApp/REST/add_message.php?message=" + message + "&username=" + username;
+            string toSend = "http://192.168.1.2/SupportApp/REST/add_message.php?message=" + message + "&username=" + username;
 
             var checkif = checkif_blank();
             if (checkif)

@@ -61,6 +61,7 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ReportHandler.cs" />
     <Compile Include="RetrieveMessage.cs" />
     <Compile Include="LandingPage.cs" />
     <Compile Include="MainActivity.cs" />
@@ -122,6 +123,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\sending.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\reportHandling.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
