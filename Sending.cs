@@ -34,26 +34,31 @@ namespace IT123P_Machine_Problem
 
             sendButton.Click += (o, i) =>
              {
-                 string message = messageToSend.Text;
-                 if (message == "")
-                 {
-                     Toast.MakeText(this, "Please enter a message", ToastLength.Long).Show();
-                 }
-                 else
-                 {
-                     request = (HttpWebRequest)WebRequest.Create("http://192.168.0.17/SupportApp/REST/add_message.php?message="+message+ "&username"+login_name);
-                     request.Timeout = 2000;
-                     response = (HttpWebResponse)request.GetResponse();
-                     StreamReader reader = new StreamReader(response.GetResponseStream());
-                     res = reader.ReadToEnd();
-                     Toast.MakeText(this, res, ToastLength.Long).Show();
-                     Finish();
-                 }
+                 sendButton_Click(sender, EventArgs, );
              };
             returnButton.Click += (o, i) =>
             {
                 Finish();
+            };
+        }
+
+        void sendButton_Click(object sender, EventArgs e, string name)
+        {
+            string message = messageToSend.Text;
+            //string name = ;
+            if (message == "")
+            {
+                Toast.MakeText(this, "Please enter a message", ToastLength.Long).Show();
+            }
+            else
+            {
+                request = (HttpWebRequest)WebRequest.Create("http://192.168.0.17/SupportApp/REST/add_message.php?message=" + message + " &username=" + login_name);
+                request.Timeout = 2000;
+                response = (HttpWebResponse)request.GetResponse();
+                StreamReader reader = new StreamReader(response.GetResponseStream());
+                res = reader.ReadToEnd();
+                Toast.MakeText(this, res, ToastLength.Long).Show();
+                //Finish();
             }
         }
-    }
 }
