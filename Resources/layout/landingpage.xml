@@ -11,5 +11,15 @@
         android:minWidth="25px"
         android:minHeight="25px"
         android:id="@+id/textView1" />
+    <Button
+        android:text="Send a Message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button1" />
+    <Button
+        android:text="Receive a Message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button2" />
 
 </LinearLayout>
