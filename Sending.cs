@@ -16,7 +16,7 @@ namespace IT123P_Machine_Problem
     [Activity(Label = "Sending")]
     public class Sending : Activity
     {
-        string login_name, res="";
+        string login_name, res = "";
         EditText messageToSend;
         Button sendButton, returnButton;
         HttpWebResponse response;
@@ -61,4 +61,5 @@ namespace IT123P_Machine_Problem
                 //Finish();
             }
         }
+    }
 }

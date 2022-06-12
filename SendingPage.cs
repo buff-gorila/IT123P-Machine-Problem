@@ -27,14 +27,16 @@ namespace IT123P_Machine_Problem
         {
             base.OnCreate(savedInstanceState);
             //set layout
-            SetContentView(Resource.Layout.sending);//The layout is not yet created
+            SetContentView(Resource.Layout.sending);
             //get name of who login through Intent
             login_name = Intent.GetStringExtra("Name");
             //instantiate widgets
-            User= FindViewById<EditText>(Resource.Id.editText1);
-            editMessage = FindViewById<EditText>(Resource.Id.editText2);
+            User= FindViewById<TextView>(Resource.Id.textView2);
+            editMessage = FindViewById<EditText>(Resource.Id.editText1);
             btnSubmit = FindViewById<Button>(Resource.Id.button1);
             btnHome = FindViewById<Button>(Resource.Id.button2);
+            User.Text = login_name;
+
             btnHome.Click += this.Back_LandingPage;
             btnSubmit.Click += this.AddMessage;
         }
@@ -48,12 +50,12 @@ namespace IT123P_Machine_Problem
         {
             message = editMessage.Text;
             username = User.Text;
-           
-            
+            string toSend = "http://192.168.0.17/SupportApp/REST/add_message.php?message=" + message + "&username=" + username;
+
             var checkif = checkif_blank();
             if (checkif)
             {
-                request = (HttpWebRequest)WebRequest.Create("http://192.168.0.17/SupportApp/REST/add_message.php?message=" + message + " &username=" + login_name);
+                request = (HttpWebRequest)WebRequest.Create(toSend);
                 response = (HttpWebResponse)request.GetResponse();
                 StreamReader reader = new StreamReader(response.GetResponseStream());
                 res = reader.ReadToEnd();
@@ -82,7 +84,6 @@ namespace IT123P_Machine_Problem
         public void Clear()
         {
             editMessage.Text = "";
-            User.Text = "";
         }
 
 
