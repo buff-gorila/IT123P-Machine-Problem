@@ -40,7 +40,7 @@ namespace IT123P_Machine_Problem
             };
             receivebtn.Click += (o, i) =>
             {
-                Intent receive = new Intent(this,typeof(Receiving));
+                Intent receive = new Intent(this,typeof(RetrieveMessage));
                 receive.PutExtra("Name", login_name);
                 StartActivity(receive);
             };
