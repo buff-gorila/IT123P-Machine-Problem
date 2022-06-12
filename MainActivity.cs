@@ -14,7 +14,7 @@ namespace IT123P_Machine_Problem
     public class MainActivity : AppCompatActivity
     { 
         EditText edit1, edit2;
-        Button btn1;
+        Button btn1, btn2;
         HttpWebResponse response;
         HttpWebRequest request;
         string res = "", uname = "", pword = "";
@@ -29,8 +29,10 @@ namespace IT123P_Machine_Problem
             edit1 = FindViewById<EditText>(Resource.Id.editText1);
             edit2 = FindViewById<EditText>(Resource.Id.editText2);
             btn1 = FindViewById<Button>(Resource.Id.button1);
+            btn2 = FindViewById<Button>(Resource.Id.button2);
 
             btn1.Click += Login;
+            btn2.Click += testPage;
 
         }
 
@@ -41,7 +43,7 @@ namespace IT123P_Machine_Problem
             uname = edit1.Text;
             //Change to your ip adress and ports.
             //Again I stress that this needs the correct ports and IP
-            request = (HttpWebRequest)WebRequest.Create("http://192.168.0.17/SupportApp/REST/user_login.php?uname=" + uname + " &password=" + pword);
+            request = (HttpWebRequest)WebRequest.Create("http://192.168.1.2/SupportApp/REST/user_login.php?uname=" + uname + " &password=" + pword);
             request.Proxy = null;
             request.Timeout = 2000;
             response = (HttpWebResponse)request.GetResponse();
@@ -55,6 +57,12 @@ namespace IT123P_Machine_Problem
                 i.PutExtra("Name", uname); 
                 StartActivity(i);
             }
+        }
+
+        public void testPage(object sender, EventArgs e)
+        {
+            Intent i = new Intent(this, typeof(RetrieveMessage));
+            StartActivity(i);
         }
 
 
