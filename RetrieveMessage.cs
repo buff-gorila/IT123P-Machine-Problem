@@ -42,9 +42,16 @@ namespace IT123P_Machine_Problem
             btn1.Click += getMessage;
             btn2.Click += reportMessage; // dont do stuff on this since not linked to login
             btn3.Click += returnToLanding;
+
+            buildMessage();
         }
 
         public void getMessage(object sender, EventArgs e)
+        {
+            buildMessage();
+        }
+
+        public void buildMessage()
         {
             // change ip to your pc's ipv4 address when testing on your end (type ipconfig in command prompt to find it)
             // also change directory to wherever you've stored the php files
@@ -66,13 +73,12 @@ namespace IT123P_Machine_Problem
                 txtMsg.Text = message;
                 txtID.Text = id;
                 Toast.MakeText(this, "Someone wants to tell you this...", ToastLength.Long).Show();
-            } 
+            }
             catch (IndexOutOfRangeException) // error to catch if messagetable is empty
             {
                 Toast.MakeText(this, "There are no messages available at the moment...", ToastLength.Long).Show();
                 return;
             }
-           
         }
 
         public void reportMessage(object sender, EventArgs e)
@@ -80,7 +86,7 @@ namespace IT123P_Machine_Problem
         // since mvps i wont implement it for now
         }
 
-        // test login (change once proper login is here)
+        //Simple return to landing page/previous page
         public void returnToLanding(object sender, EventArgs e)
         {
             Finish();
