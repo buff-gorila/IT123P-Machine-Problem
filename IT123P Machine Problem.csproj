@@ -61,6 +61,8 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Receiving.cs" />
+    <Compile Include="Sending.cs" />
     <Compile Include="LandingPage.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
@@ -112,6 +114,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\sending.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\receiving.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
