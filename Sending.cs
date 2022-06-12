@@ -34,7 +34,7 @@ namespace IT123P_Machine_Problem
 
             sendButton.Click += (o, i) =>
              {
-                 sendButton_Click(sender, EventArgs, );
+                 //sendButton_Click(sender, EventArgs, );
              };
             returnButton.Click += (o, i) =>
             {

@@ -34,7 +34,7 @@ namespace IT123P_Machine_Problem
 
             sendbtn.Click += (o, i) =>
             {
-                Intent send = new Intent(this, typeof(Sending));
+                Intent send = new Intent(this, typeof(SendingPage));
                 send.PutExtra("Name", login_name);
                 StartActivity(send);
             };
