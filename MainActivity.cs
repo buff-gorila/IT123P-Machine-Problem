@@ -39,7 +39,9 @@ namespace IT123P_Machine_Problem
         public void Login(object sender, EventArgs e)
         {
             pword = edit2.Text;
-            //Use the cryptography class here to hash it once we're out of the mvp stage
+            //Uses the hashing class to get a hashed password
+            Hashing h = new Hashing();
+            pword = h.HashString(pword);
             uname = edit1.Text;
             //Change to your ip adress and ports.
             //Again I stress that this needs the correct ports and IP
@@ -49,7 +51,7 @@ namespace IT123P_Machine_Problem
             response = (HttpWebResponse)request.GetResponse();
             StreamReader reader = new StreamReader(response.GetResponseStream());
             res = reader.ReadToEnd();
-            Toast.MakeText(this, res, ToastLength.Long).Show();
+            Toast.MakeText(this, pword, ToastLength.Long).Show();
 
             if (res.Contains("OK!"))
             {

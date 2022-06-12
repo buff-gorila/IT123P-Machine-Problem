@@ -37,8 +37,8 @@ namespace IT123P_Machine_Problem
 
         public void newAccount(object sender, EventArgs e)
         {
-            string newpword = username.Text;
-            string newuser = password.Text;
+            string newpword = password.Text;
+            string newuser = username.Text;
             //hashes new password
             Hashing h = new Hashing();
             string hashedpass = h.HashString(newpword);
