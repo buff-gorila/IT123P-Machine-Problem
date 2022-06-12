@@ -37,9 +37,11 @@ namespace IT123P_Machine_Problem
         public void Login(object sender, EventArgs e)
         {
             pword = edit2.Text;
+            //Use the cryptography class here to hash it once we're out of the mvp stage
             uname = edit1.Text;
             //Change to your ip adress and ports.
-            request = (HttpWebRequest)WebRequest.Create("http://192.168.0.110:8080/IT123P/REST/admin_login.php?uname=" + uname + " &pword=" + pword);
+            //Again I stress that this needs the correct ports and IP
+            request = (HttpWebRequest)WebRequest.Create("http://192.168.0.17:8080/SupportApp/REST/add_record.php?uname=" + uname + " &password=" + pword);
             request.Proxy = null;
             request.Timeout = 2000;
             response = (HttpWebResponse)request.GetResponse();
@@ -50,7 +52,7 @@ namespace IT123P_Machine_Problem
             if (res.Contains("OK!"))
             {
                 Intent i = new Intent(this, typeof(LandingPage));
-                i.PutExtra("Name", uname);  //baka gamitin ung name sa kabilang Activity
+                i.PutExtra("Name", uname); 
                 StartActivity(i);
             }
         }
