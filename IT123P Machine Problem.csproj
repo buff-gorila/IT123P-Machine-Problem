@@ -61,6 +61,7 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Hashing.cs" />
     <Compile Include="RetrieveMessage.cs" />
     <Compile Include="LandingPage.cs" />
     <Compile Include="MainActivity.cs" />
