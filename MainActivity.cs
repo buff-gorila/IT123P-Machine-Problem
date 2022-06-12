@@ -29,10 +29,10 @@ namespace IT123P_Machine_Problem
             edit1 = FindViewById<EditText>(Resource.Id.editText1);
             edit2 = FindViewById<EditText>(Resource.Id.editText2);
             btn1 = FindViewById<Button>(Resource.Id.button1);
-            //btn2 = FindViewById<Button>(Resource.Id.button2);
+            btn2 = FindViewById<Button>(Resource.Id.button2);
 
             btn1.Click += Login;
-            //btn2.Click += testPage;
+            btn2.Click += Registration;
 
         }
 
@@ -56,12 +56,13 @@ namespace IT123P_Machine_Problem
                 Intent i = new Intent(this, typeof(LandingPage));
                 i.PutExtra("Name", uname); 
                 StartActivity(i);
+                
             }
         }
 
-        public void testPage(object sender, EventArgs e)
+        public void Registration(object sender, EventArgs e)
         {
-            Intent i = new Intent(this, typeof(RetrieveMessage));
+            Intent i = new Intent(this, typeof(RegisterPage));
             StartActivity(i);
         }
 

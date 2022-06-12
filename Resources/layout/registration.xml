@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
-        android:text="Login"
+        android:text="Register"
         android:layout_width="match_parent"
         android:layout_height="32.5dp"
         android:minWidth="25px"
@@ -34,17 +33,13 @@
         android:layout_height="wrap_content"
         android:id="@+id/editText2" />
     <Button
-        android:text="LOGIN"
+        android:text="Register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button1"
-        android:backgroundTint="#119955" />
+        android:id="@+id/button1" />
     <Button
-        android:text="Sign Up"
+        android:text="Return"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button2"
-        android:backgroundTint="#791100" />
-
-
+        android:id="@+id/button2" />
 </LinearLayout>

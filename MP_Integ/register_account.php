@@ -7,7 +7,7 @@ $password = $_GET['password'];
 $queryCommand = "INSERT INTO usertable (username, password) VALUES ('$username','$password')";
 $result = mysqli_query($con,$queryCommand));
 if ($result) {
-	echo "Message Sent! Thank You!";
+	echo "Account Registered";
 } else {
 	echo "Unable to register account.";
 }
