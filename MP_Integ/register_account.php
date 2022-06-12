@@ -1,16 +1,15 @@
 <?php 
 
 include_once('connect.php');
-$message = $_GET['message'];
 $username = $_GET['username'];
+$password = $_GET['password'];
 
-$queryCommand = "INSERT INTO messagetable (message, username) VALUES ('$message','$username')";
+$queryCommand = "INSERT INTO usertable (username, password) VALUES ('$username','$password')";
 $result = mysqli_query($con,$queryCommand));
 if ($result) {
 	echo "Message Sent! Thank You!";
 } else {
-	echo "Unable to send message."; 
+	echo "Unable to register account.";
 }
-
 $con-> close();
 ?>
