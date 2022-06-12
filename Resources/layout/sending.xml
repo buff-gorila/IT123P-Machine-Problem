@@ -4,27 +4,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
-        android:text=""
+        android:text="Send a message of Support"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minWidth="25px"
         android:minHeight="25px"
         android:id="@+id/textView1" />
+    <EditText
+        android:inputType="textMultiLine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLength="255"
+        android:id="@+id/editText1" />
     <Button
-        android:text="Send a Message"
+        android:text="Send"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button1" />
     <Button
-        android:text="Receive a Message"
+        android:text="Return"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button2" />
-    <Button
-        android:text="Handle Reports"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/button3" />
 
 </LinearLayout>
