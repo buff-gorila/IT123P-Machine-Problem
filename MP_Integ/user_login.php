@@ -8,7 +8,7 @@ include_once('connect.php');
 	$password = $_GET['password'];
 
 	
-	$result = mysqli_query($con,"SELECT * FROM usertable WHERE uname = '$username' AND password = '$password'");
+	$result = mysqli_query($con,"SELECT * FROM usertable WHERE username = '$username' AND password = '$password'");
 		
 	if(!$row = mysqli_fetch_assoc($result)) 
         {

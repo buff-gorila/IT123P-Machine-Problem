@@ -41,7 +41,7 @@ namespace IT123P_Machine_Problem
             uname = edit1.Text;
             //Change to your ip adress and ports.
             //Again I stress that this needs the correct ports and IP
-            request = (HttpWebRequest)WebRequest.Create("http://192.168.0.17:8080/SupportApp/REST/add_record.php?uname=" + uname + " &password=" + pword);
+            request = (HttpWebRequest)WebRequest.Create("http://192.168.0.17/SupportApp/REST/user_login.php?uname=" + uname + " &password=" + pword);
             request.Proxy = null;
             request.Timeout = 2000;
             response = (HttpWebResponse)request.GetResponse();
