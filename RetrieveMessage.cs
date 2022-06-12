@@ -41,13 +41,14 @@ namespace IT123P_Machine_Problem
 
             btn1.Click += getMessage;
             btn2.Click += reportMessage; // dont do stuff on this since not linked to login
+            btn3.Click += returnToLanding;
         }
 
         public void getMessage(object sender, EventArgs e)
         {
             // change ip to your pc's ipv4 address when testing on your end (type ipconfig in command prompt to find it)
             // also change directory to wherever you've stored the php files
-            request = (HttpWebRequest)WebRequest.Create("http://192.168.1.2/SupportApp/REST/display_message.php");
+            request = (HttpWebRequest)WebRequest.Create("http://192.168.0.17/SupportApp/REST/display_message.php");
             response = (HttpWebResponse)request.GetResponse();
             StreamReader reader = new StreamReader(response.GetResponseStream());
             var result = reader.ReadToEnd();
@@ -80,10 +81,9 @@ namespace IT123P_Machine_Problem
         }
 
         // test login (change once proper login is here)
-        public void returnToLogin(object sender, EventArgs e)
+        public void returnToLanding(object sender, EventArgs e)
         {
-            Intent i = new Intent(this, typeof(MainActivity));
-            StartActivity(i);
+            Finish();
         }
     }
 }

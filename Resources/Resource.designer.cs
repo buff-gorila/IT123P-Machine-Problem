@@ -4407,7 +4407,10 @@ namespace IT123P_Machine_Problem
 			public const int select_dialog_singlechoice_material = 2131427386;
 			
 			// aapt resource value: 0x7F0B003B
-			public const int support_simple_spinner_dropdown_item = 2131427387;
+			public const int sending = 2131427387;
+			
+			// aapt resource value: 0x7F0B003C
+			public const int support_simple_spinner_dropdown_item = 2131427388;
 			
 			static Layout()
 			{

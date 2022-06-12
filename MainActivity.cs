@@ -29,7 +29,7 @@ namespace IT123P_Machine_Problem
             edit1 = FindViewById<EditText>(Resource.Id.editText1);
             edit2 = FindViewById<EditText>(Resource.Id.editText2);
             btn1 = FindViewById<Button>(Resource.Id.button1);
-            btn2 = FindViewById<Button>(Resource.Id.button2);
+            //btn2 = FindViewById<Button>(Resource.Id.button2);
 
             btn1.Click += Login;
             //btn2.Click += testPage;
